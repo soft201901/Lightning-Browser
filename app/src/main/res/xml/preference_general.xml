@@ -8,6 +8,10 @@
             android:title="@string/block"/>
         <CheckBoxPreference
             android:defaultValue="false"
+            android:key="jump_url"
+            android:title="@string/jump_url"/>
+        <CheckBoxPreference
+            android:defaultValue="false"
             android:key="savedata"
             android:title="@string/save_data" />
         <CheckBoxPreference

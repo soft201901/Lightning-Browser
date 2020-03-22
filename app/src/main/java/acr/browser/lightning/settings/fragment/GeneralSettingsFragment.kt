@@ -91,6 +91,12 @@ class GeneralSettingsFragment : AbstractSettingsFragment() {
         )
 
         checkBoxPreference(
+                preference = SETTINGS_JUMP_URL,
+                isChecked = userPreferences.jumpUrlEnabled,
+                onCheckChange = { userPreferences.jumpUrlEnabled = it }
+        )
+
+        checkBoxPreference(
             preference = SETTINGS_SAVEDATA,
             isChecked = userPreferences.saveDataEnabled,
             onCheckChange = { userPreferences.saveDataEnabled = it }
@@ -445,6 +451,7 @@ class GeneralSettingsFragment : AbstractSettingsFragment() {
     companion object {
         private const val SETTINGS_PROXY = "proxy"
         private const val SETTINGS_IMAGES = "cb_images"
+        private const val SETTINGS_JUMP_URL = "jump_url"
         private const val SETTINGS_SAVEDATA = "savedata"
         private const val SETTINGS_JAVASCRIPT = "cb_javascript"
         private const val SETTINGS_COLOR_MODE = "cb_colormode"

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
 
-    <string name="app_name">Lightning</string>
+    <string name="app_name">轻轻浏览器</string>
     <string name="action_new_tab">New tab</string>
     <string name="action_share">Share</string>
     <string name="action_history">History</string>
@@ -25,6 +25,8 @@
     <string name="cache">Clear cache on exit</string>
     <string name="reflow">Enable text reflow</string>
     <string name="block">Block images</string>
+    <string name="jump_url">允许跳转到应用</string>
+
     <string name="window">Allow sites to open new windows</string>
     <string name="cookies">Enable cookies</string>
     <string name="size">Text size</string>

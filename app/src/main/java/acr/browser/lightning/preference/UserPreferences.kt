@@ -41,6 +41,8 @@ class UserPreferences @Inject constructor(
      */
     var blockImagesEnabled by preferences.booleanPreference(BLOCK_IMAGES, false)
 
+    var jumpUrlEnabled by preferences.booleanPreference(JUMP_URL, false)
+
     /**
      * True if the browser should clear the browser cache when the app is exited, false otherwise.
      */
@@ -291,6 +293,7 @@ class UserPreferences @Inject constructor(
 private const val WEB_RTC = "webRtc"
 private const val BLOCK_ADS = "AdBlock"
 private const val BLOCK_IMAGES = "blockimages"
+private const val JUMP_URL = "jump_url"
 private const val CLEAR_CACHE_EXIT = "cache"
 private const val COOKIES = "cookies"
 private const val DOWNLOAD_DIRECTORY = "downloadLocation"
