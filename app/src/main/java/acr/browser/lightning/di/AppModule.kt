@@ -5,6 +5,7 @@ import acr.browser.lightning.device.BuildType
 import acr.browser.lightning.html.ListPageReader
 import acr.browser.lightning.html.bookmark.BookmarkPageReader
 import acr.browser.lightning.html.homepage.HomePageReader
+import acr.browser.lightning.js.AdFilterPage
 import acr.browser.lightning.js.InvertPage
 import acr.browser.lightning.js.TextReflow
 import acr.browser.lightning.js.ThemeColor
@@ -189,6 +190,10 @@ class AppModule {
 
     @Provides
     fun providesInvertPage(): InvertPage = MezzanineGenerator.InvertPage()
+
+
+    @Provides
+    fun providesAdFilterPage(): AdFilterPage = MezzanineGenerator.AdFilterPage()
 
 }
 

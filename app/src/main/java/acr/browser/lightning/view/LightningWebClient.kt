@@ -9,6 +9,7 @@ import acr.browser.lightning.controller.UIController
 import acr.browser.lightning.di.injector
 import acr.browser.lightning.extensions.resizeAndShow
 import acr.browser.lightning.extensions.snackbar
+import acr.browser.lightning.js.AdFilterPage
 import acr.browser.lightning.js.InvertPage
 import acr.browser.lightning.js.TextReflow
 import acr.browser.lightning.log.Logger
@@ -28,6 +29,7 @@ import android.net.MailTo
 import android.net.http.SslError
 import android.os.Build
 import android.os.Message
+import android.util.Log
 import android.view.LayoutInflater
 import android.webkit.*
 import android.widget.CheckBox
@@ -60,6 +62,7 @@ class LightningWebClient(
     @Inject internal lateinit var logger: Logger
     @Inject internal lateinit var textReflowJs: TextReflow
     @Inject internal lateinit var invertPageJs: InvertPage
+    @Inject internal lateinit var adFilterPage: AdFilterPage
 
     private var adBlock: AdBlocker
 
@@ -133,6 +136,8 @@ class LightningWebClient(
         if (lightningView.invertPage) {
             view.evaluateJavascript(invertPageJs.provideJs(), null)
         }
+        Log.e("TestRun", "onPageFinished adFilterPage " + url);
+        view.evaluateJavascript(adFilterPage.provideJs(), null)
         uiController.tabChanged(lightningView)
     }
 
@@ -304,6 +309,16 @@ class LightningWebClient(
                 webView.loadUrl(url, headers)
                 true
             }
+        }
+    }
+
+    override fun onLoadResource(view: WebView?, url: String?) {
+        super.onLoadResource(view, url)
+        Log.e("Test", "onLoadRes " + url);
+        // 加载资源时处理会比较快
+        if (url?.contains(".gif") == true || url?.endsWith("html") == true) {
+            Log.e("TestRun", "onLoadRes " + url);
+            view?.evaluateJavascript(adFilterPage.provideJs(), null)
         }
     }
 
