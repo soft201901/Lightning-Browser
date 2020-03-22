@@ -18,11 +18,11 @@
     <header
         android:fragment="acr.browser.lightning.settings.fragment.AdvancedSettingsFragment"
         android:title="@string/settings_advanced"/>
-    <header
+<!--    <header
         android:fragment="acr.browser.lightning.settings.fragment.AboutSettingsFragment"
         android:summary="@string/settings_about_explain"
-        android:title="@string/settings_about"/>
-    <header
+        android:title="@string/settings_about"/>-->
+<!--    <header
         android:summary="@string/faq_description"
         android:title="@string/faq">
         <intent
@@ -35,5 +35,5 @@
     </header>
     <header
         android:fragment="acr.browser.lightning.settings.fragment.DebugSettingsFragment"
-        android:title="@string/debug_title"/>
+        android:title="@string/debug_title"/>-->
 </preference-headers>
